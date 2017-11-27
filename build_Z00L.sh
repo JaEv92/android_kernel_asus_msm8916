@@ -28,7 +28,7 @@ DTBTOOL=$KERNEL_DIR/tools/dtbToolCM
 export ARCH=arm64
 export CROSS_COMPILE=~/kernel/aarch64-linux-android-4.9/bin/aarch64-linux-android-
 export KBUILD_BUILD_USER="TheImpulson"
-export KBUILD_BUILD_HOST="TheImpulson"
+export KBUILD_BUILD_HOST="XDA-Developers"
 
 ## Functions ##
 
