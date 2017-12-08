@@ -12,7 +12,7 @@ nocol='\033[0m'
 KERNEL_NAME="FireKernel"
 VERSION="r1.3"
 DATE=$(date +"%d-%m-%Y-%I-%M")
-DEVICE="Z00L"
+DEVICE="Z00T"
 FINAL_ZIP=$KERNEL_NAME-$VERSION-$DATE-$DEVICE.zip
 defconfig=Z00T_defconfig
 
@@ -28,7 +28,7 @@ DTBTOOL=$KERNEL_DIR/tools/dtbToolCM
 export ARCH=arm64
 export CROSS_COMPILE=~/kernel/aarch64-linux-android-4.9/bin/aarch64-linux-android-
 export KBUILD_BUILD_USER="TheImpulson"
-export KBUILD_BUILD_HOST="XDA-developers"
+export KBUILD_BUILD_HOST="XDA-Developers"
 
 ## Functions ##
 
