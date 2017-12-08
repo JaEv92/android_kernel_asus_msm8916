@@ -28,7 +28,7 @@ DTBTOOL=$KERNEL_DIR/tools/dtbToolCM
 export ARCH=arm64
 export CROSS_COMPILE=~/kernel/aarch64-linux-android-4.9/bin/aarch64-linux-android-
 export KBUILD_BUILD_USER="TheImpulson"
-export KBUILD_BUILD_HOST="XDA-Developers"
+export KBUILD_BUILD_HOST="XDA-developers"
 
 ## Functions ##
 
@@ -56,6 +56,9 @@ $DTBTOOL -2 -o $DT_IMAGE -s 2048 -p $KERNEL_DIR/scripts/dtc/ $KERNEL_DIR/arch/ar
 
 # Making zip
 function make_zip() {
+mkdir -p tmp_mod
+make -j8 modules_install INSTALL_MOD_PATH=tmp_mod INSTALL_MOD_STRIP=1
+find tmp_mod/ -name '*.ko' -type f -exec cp '{}' $ANYKERNEL_DIR/modules/ \;
 cp $KERNEL_IMG $ANYKERNEL_DIR
 cp $DT_IMAGE $ANYKERNEL_DIR
 mkdir -p $UPLOAD_DIR
@@ -114,6 +117,7 @@ fi
 function cleanup(){
 rm -rf $ANYKERNEL_DIR/Image
 rm -rf $ANYKERNEL_DIR/dt.img
+rm -rf $ANYKERNEL_DIR/modules/*.ko
 rm -rf $KERNEL_DIR/arch/arm64/boot/dts/*.dtb
 rm -rf $DT_IMAGE
 }
