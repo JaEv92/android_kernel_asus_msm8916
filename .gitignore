@@ -83,7 +83,6 @@ GTAGS
 *.orig
 *~
 \#*#
-net/wireguard/
 
 #
 # Leavings from module signing
