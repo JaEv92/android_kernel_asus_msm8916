@@ -11,9 +11,6 @@ do.cleanup=1
 do.cleanuponabort=0
 device.name1=Z00L
 device.name2=Z00T
-device.name3=
-device.name4=
-device.name5=
 } # end properties
 
 # shell variables
