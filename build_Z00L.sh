@@ -25,7 +25,7 @@ UPLOAD_DIR=~/kernel/$DEVICE
 DTBTOOL=$KERNEL_DIR/tools/dtbToolCM
 
 # Export
-export ARCH=arm64
+export ARCH=arm64 SUBARCH=arm64
 export CROSS_COMPILE=~/kernel/aarch64-linux-android-4.9/bin/aarch64-linux-android-
 export KBUILD_BUILD_USER="theimpulson"
 
